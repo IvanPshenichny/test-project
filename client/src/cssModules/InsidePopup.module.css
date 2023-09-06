@@ -1,0 +1,32 @@
+.mainArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputArea{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.quickReplyArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.itemWraper{
+
+    width: 90%;
+    margin: 5px;
+    border-radius: 10px;
+}
+.item{
+    width: 100%;
+    margin: 5px;
+}
+.itemWraper:hover{
+    background-color: rgb(105, 168, 69);
+}

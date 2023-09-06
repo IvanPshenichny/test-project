@@ -1,0 +1,72 @@
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  height: 70px; 
+  width: 100px;
+}
+.header img {
+  width: 50px;
+  height: 50px;
+  padding-left: 7px;
+  padding-top: 5px;
+}
+.name {
+  padding-left: 5px;
+  padding-top: 50px;
+  position: absolute;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: darkgray;
+  align-items: center;
+  justify-content:space-between;
+}
+.logoutButton {
+  border: none;
+  background-color: darkgray;
+  opacity:0.8;
+  
+}
+.headerBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 400px;
+}
+.headerBar img {
+  margin-right: 2px;
+  width: 18px;
+  height: 18px;
+}
+.barElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  opacity: 0.8;
+}
+.barElement:hover {
+padding-bottom: 4px;
+opacity: 1;
+transition-duration: 0.1s;
+}
+.logoutElement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  opacity: 0.8;
+  width: 100px;
+}
+
+.logoutElement img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+}
+.logoutElement:hover{
+  padding-bottom: 4px;
+  transition-duration: 0.1s;
+  opacity:1;
+}
+

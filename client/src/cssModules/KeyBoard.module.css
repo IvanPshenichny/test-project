@@ -1,0 +1,14 @@
+.keyBoard{
+    width: 100%;
+    height: 100%;
+    opacity: 90%;
+}
+.keyBoard img{
+    width: 100%;
+    height: 100%;
+}
+.keyBoard:hover{
+    width: 101%;
+    height: 101%;
+    opacity: 100%;
+}
