@@ -14,7 +14,6 @@ class UserService {
   addUser(userData) {
     const { email, ...restUserData } = userData;
     this.usersMap.set(email, restUserData);
-    console.log(userData);
     return userData;
   }
 
