@@ -4,7 +4,8 @@ const authorization = require("../middleware/authorization");
 
 router.get("/", authorization, async (req, res) => {
   try {
-    const user = userService.getUser(req.user);
+    console.log(req.email);
+    const user = userService.getUser(req.email);
     res.json(user);
   } catch (err) {
     console.error(err.message);

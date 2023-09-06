@@ -14,7 +14,7 @@ router.post("/register", validInfo, async (req, res) => {
     // step 2. check if user exist (if user exist then throw error)
     const exist = userService.checkEmailExist(email);
     if (exist) {
-      return res.status(401).send("User already exist");
+      return res.status(400).send("User already exist");
     }
 
     // step 3. encrypt user password

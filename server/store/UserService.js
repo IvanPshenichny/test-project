@@ -7,13 +7,12 @@ const adminUserData = {
 
 class UserService {
   constructor() {
-    this.usersMap = new Map(); // <email, {firstname, lastname, passwords}>
+    this.usersMap = new Map();
     this.usersMap.set(adminUserData.email, adminUserData);
   }
 
   addUser(userData) {
-    const { email, ...restUserData } = userData;
-    this.usersMap.set(email, restUserData);
+    this.usersMap.set(userData.email, userData);
     return userData;
   }
 
@@ -27,8 +26,7 @@ class UserService {
 
   updateUsersData(userData) {
     if (this.usersMap.has(userData.email)) {
-      const { email, ...restUserData } = userData;
-      this.usersMap.set(email, restUserData);
+      this.usersMap.set(userData.email, userData);
     }
   }
 
