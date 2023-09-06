@@ -1,45 +1,41 @@
-const getAllUsers =
-  "SELECT firstname, lastname, id, email, passwords FROM UserAuthData";
-const getUserById = "SELECT * FROM UserAuthData WHERE id = $1";
-const addUsers =
-  "INSERT INTO UserAuthData (firstname, lastname, email, passwords) VALUES ($1, $2, $3, $4) RETURNING *";
-const checkEmailExist = "SELECT * FROM UserAuthData WHERE email = $1";
-const removeUsers = "DELETE FROM UserAuthData WHERE id = $1 ";
-const updateUsersData =
-  "UPDATE UserAuthData SET  firstname =$1,lastname =$2 WHERE id =$3";
-const getUser =
-  "SELECT firstname, lastname, email FROM UserAuthData WHERE id = $1";
-const getId = "SELECT id FROM UserAuthData";
-const addExtraInfo =
-  "UPDATE UserAuthData SET statusi =$1 WHERE id =$2 RETURNING *";
+const adminUserData = {
+  firstname: "qwe",
+  lastname: "qwe",
+  email: "qwe@qwe.qwe",
+  passwords: "$2b$10$FLlIt7nJ/xNeJM4m1vXRjOVkNkLVbkJTbfQFRhA/NU5pohP28OaHq",
+};
 
 class UserService {
   constructor() {
-    this.usersMap = new Map(); // <email, {firstname, lastname, password}>
+    this.usersMap = new Map(); // <email, {firstname, lastname, passwords}>
+    this.usersMap.set(adminUserData.email, adminUserData);
   }
 
-  getAllUsers() {
-    return this.users;
-  }
-
-  getUserById(id) {
-    return this.usersMap.get(id);
-  }
-
-  addUsers(userData) {
+  addUser(userData) {
     const { email, ...restUserData } = userData;
     this.usersMap.set(email, restUserData);
+    console.log(userData);
+    return userData;
   }
 
   checkEmailExist(email) {
-    return this.usersMap.has(email)
+    return this.usersMap.has(email);
   }
 
   removeUsers(email) {
-    this.usersMap.delete(email)
+    this.usersMap.delete(email);
   }
 
-  updateUsersData() {
-    
+  updateUsersData(userData) {
+    if (this.usersMap.has(userData.email)) {
+      const { email, ...restUserData } = userData;
+      this.usersMap.set(email, restUserData);
+    }
+  }
+
+  getUser(email) {
+    return this.usersMap.get(email);
   }
 }
+
+module.exports = UserService;
